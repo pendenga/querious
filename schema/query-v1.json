@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/pendenga/querious/schema/query-v1.yaml",
+  "type": "object",
+  "title": "Querious Query",
+  "description": "This message format defines a query to be used by Querious.",
+  "required": [
+    "statement",
+    "parameters",
+    "command",
+    "authors"
+  ],
+  "properties": {
+    "authors": {
+      "$id": "#/properties/authors",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "authors",
+      "description": "Each author that modifies this query may leave their name.",
+      "examples": [
+        "prepare"
+      ]
+    },
+    "command": {
+      "$id": "#/properties/command",
+      "type": "string",
+      "enum": [
+        "prepare",
+        "query"
+      ],
+      "title": "command",
+      "description": "The command to be used by PDO to execute the query. (query if no parameters will be used)",
+      "examples": [
+        "prepare"
+      ]
+    },
+    "parameters": {
+      "$id": "#/properties/parameters",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "parameters",
+      "description": "The list of replacement parameters (not values) found in the query",
+      "examples": [
+        ":username"
+      ]
+    },
+    "statement": {
+      "$id": "#/properties/statement",
+      "type": "string",
+      "title": "statement",
+      "description": "The statement to be executed by PDO, either by query or prepare-execute commands.",
+      "examples": [
+        "SELECT * FROM users WHERE username = :username"
+      ]
+    }
+  }
+}

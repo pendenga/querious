@@ -1,0 +1,43 @@
+{
+  "name": "pendenga/querious",
+  "type": "library",
+  "description": "Library to load SQL queries from a Git Repo",
+  "keywords": ["pdo query"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Grant Anderson",
+      "email": "pendenga@gmail.com"
+    }
+  ],
+  "config": {
+    "platform": {
+      "php": "7.3.11",
+      "ext-json": "1.5.0",
+      "ext-pdo": "7.1.17",
+      "ext-zip": "1.15.2"
+    }
+  },
+  "require": {
+    "php": ">=7.3.0",
+    "opis/json-schema": "^1.0",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0",
+    "pendenga/file": "^0.1.0",
+    "pendenga/log": "^0.1.0",
+    "ext-pdo": "*",
+    "ext-zip": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pendenga\\Querious\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Pendenga\\Querious\\Test\\": "test/"
+    }
+  }
+}

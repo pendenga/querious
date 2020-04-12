@@ -1,0 +1,8 @@
+[mysql connection]
+servername = MYSQL_HOST
+username = MYSQL_USERNAME
+password = MYSQL_PASSWORD
+database = MYSQL_DATABASE
+
+[mysql example]
+user_id = user_id_for_mysql_example
