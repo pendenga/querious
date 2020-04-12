@@ -4,5 +4,6 @@ username = MYSQL_USERNAME
 password = MYSQL_PASSWORD
 database = MYSQL_DATABASE
 
-[mysql example]
-user_id = user_id_for_mysql_example
+[acceptance test]
+querious_repo = https://raw.githubusercontent.com/pendenga/querious_queries/master/query/
+username = pendenga
