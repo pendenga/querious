@@ -44,7 +44,7 @@ class AcceptanceTest extends TestCase
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // find query definition file
-        $full_path = Ini::get('querious_repo') . 'user-data-v1.json';
+        $full_path = 'https://raw.githubusercontent.com/pendenga/querious_queries/master/query/user-data-v1.json';
         $this->query_json = file_get_contents($full_path);
         if ($this->query_json === false) {
             throw new QueriousException("Query file not found: {$full_path}");
@@ -80,7 +80,7 @@ class AcceptanceTest extends TestCase
     {
         $querious = new Querious();
         $querious->setQuery(new Query($this->query_json, $this->schema));
-        $stmt = $querious->execute($this->pdo, ['username' => Ini::get('username')]);
+        $stmt = $querious->execute($this->pdo, ['username' => 'pendenga']);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         $this->assertEquals(['user_id', 'username', 'email_address', 'full_name'], array_keys($row));
     }
